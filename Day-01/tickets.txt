@@ -1,0 +1,10 @@
+🎫 Ticket A: Control Flow & Patterns (Operational)
+Ticket ID: SHOP-601
+System Component: Ordering Engine Guard Rails
+
+The Mission:
+ Write a function named processOrder that accepts an orderObject. You must implement two 
+ explicit Guard Rails using early return statements:
+ 1. If the orderObject is completely missing (null or undefined), print "Error: Invalid payload" and exit immediately.
+ 2. If the order has an empty items list (items.length === 0), print "Error: Cart is empty" and exit immediately.
+ 3. If it passes both rails, print "Success: Order sent to kitchen!".
