@@ -9,11 +9,11 @@
 
 // • Copy and Paste this Test Environment into your file to run your solution:
 // ---------------------------------------------------------------------------------
-// const localContractorProjects = [
-//     { id: 1, siteName: "Extension R5", status: "Active" },
-//     { id: 2, siteName: "Garage Block 3", status: "Completed" },
-//     { id: 3, siteName: "Boundary Wall S1", status: "Active" }
-// ];
+const localContractorProjects = [
+    { id: 1, siteName: "Extension R5", status: "Active" },
+    { id: 2, siteName: "Garage Block 3", status: "Completed" },
+    { id: 3, siteName: "Boundary Wall S1", status: "Active" }
+];
 
 // console.log(filterActiveJobSites(localContractorProjects));
 // // Target Output Array to print: 
@@ -23,3 +23,16 @@
 // =================================================================================
 //        EXECUTION: Run files in Git Bash via 'node filename.js' to test!
 // =================================================================================
+     function filterActiveJobSites(projectsArray){
+        // check if array is empty
+        if(projectsArray.length === 0)
+            return; // exit immediately
+        
+            const activeJobs = projectsArray.filter((item) => item.status === 'Active');// check for match
+        
+        // return activeJobs;
+        console.log(activeJobs);
+
+            return activeJobs;
+     }
+     filterActiveJobSites(localContractorProjects);

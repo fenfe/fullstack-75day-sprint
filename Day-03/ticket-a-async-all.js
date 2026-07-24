@@ -22,17 +22,27 @@
 // }
 
 // aggregateProjectLogs();
+// successful task takes 2.5minutes together
 const fetchSiteAEstimates = () => new Promise(res => setTimeout(() => res("Site A bricks: 1200"), 1500));
 const fetchSiteBEstimates = () => new Promise(res => setTimeout(() => res("Site B bricks: 3100"), 1000));
 
  async function aggregateProjectLogs() {
     try {
+        // make user aware that task is running
+        console.log("checking files ...");
+         // Promise.all kicks off all three timers simultaneously
+        const [siteAresults, siteBresults] = await Promise.all([fetchSiteAEstimates(), fetchSiteBEstimates()]);
+        // let him know data is here and give ti tohim
+        console.log(`Site 1 Report :${siteAresults} `);
+        console.log(`Site 2 Report :${siteBresults} `);
 
     }
-    catch {
-
+    catch (error) {
+        // if something goes wrong let him know
+        console.log("Cannot read files", error);
     }
 }
+aggregateProjectLogs();
 
 
 
